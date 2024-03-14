@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.3" version="17.3" Modules="simple" RootPath="." Language="en" Id="{F2A827DC-006E-422E-8184-212A294E5FC4}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION;AI_DETECTED_SQLEXPRESS_VERSION"/>
+    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.7.2" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.7.2" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_SQLEXPRESS_DISPLAY" MultiBuildValue="DefaultBuild:SQL Server Express 2014" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_SQLEXPRESS_VERSION" MultiBuildValue="DefaultBuild:2014" ValueLocId="-"/>
+    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:2"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="Manufacturer" Value="KeycodeMon"/>
+    <ROW Property="ProductCode" Value="1033:{8CF2A9AC-CB84-42F1-9C3E-BFC58A1EFD5E} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Coffee Shop Management"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{B18BAA75-D5D1-4491-985E-78C9CA660EFA}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="backup_Dir" Directory_Parent="data_Dir" DefaultDir="backup"/>
+    <ROW Directory="createDB_Dir" Directory_Parent="data_Dir" DefaultDir="createDB"/>
+    <ROW Directory="data_Dir" Directory_Parent="APPDIR" DefaultDir="data"/>
+    <ROW Directory="de_Dir" Directory_Parent="lib_Dir" DefaultDir="de"/>
+    <ROW Directory="es_Dir" Directory_Parent="lib_Dir" DefaultDir="es"/>
+    <ROW Directory="fr_Dir" Directory_Parent="lib_Dir" DefaultDir="fr"/>
+    <ROW Directory="it_Dir" Directory_Parent="lib_Dir" DefaultDir="it"/>
+    <ROW Directory="ja_Dir" Directory_Parent="lib_Dir" DefaultDir="ja"/>
+    <ROW Directory="ko_Dir" Directory_Parent="lib_Dir" DefaultDir="ko"/>
+    <ROW Directory="lib_Dir" Directory_Parent="APPDIR" DefaultDir="lib"/>
+    <ROW Directory="ptBR_Dir" Directory_Parent="lib_Dir" DefaultDir="pt-BR"/>
+    <ROW Directory="ru_Dir" Directory_Parent="lib_Dir" DefaultDir="ru"/>
+    <ROW Directory="zhHans_Dir" Directory_Parent="lib_Dir" DefaultDir="zh-Hans"/>
+    <ROW Directory="zhHant_Dir" Directory_Parent="lib_Dir" DefaultDir="zh-Hant"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{CC44CCAA-CCE5-4CA8-B76E-5C683F71B362}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="CreateDatabaseforolder.bat" ComponentId="{2F146190-CE39-45B6-84DF-0B2EB4C4CC93}" Directory_="createDB_Dir" Attributes="0" KeyPath="CreateDatabaseforolder.bat" Type="0"/>
+    <ROW Component="DevExpress.Charts.v20.1.Core.dll" ComponentId="{05F058A7-B217-47B2-B83C-3D9F1DDE853D}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Charts.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.CodeParser.v20.1.dll" ComponentId="{CD63A01A-6EA5-4989-B121-17211B73FC3B}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.CodeParser.v20.1.dll"/>
+    <ROW Component="DevExpress.Data.Desktop.v20.1.dll" ComponentId="{C6EA28CE-FC49-42F6-AC86-C505C150FFAE}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Data.Desktop.v20.1.dll"/>
+    <ROW Component="DevExpress.Data.Desktop.v20.1.xml" ComponentId="{04246BD6-7A1C-4D85-8AF7-848E26E3F6D8}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Data.Desktop.v20.1.xml" Type="0"/>
+    <ROW Component="DevExpress.Data.v20.1.dll" ComponentId="{25EA411E-1582-49A0-AAA2-6D7F502C29D8}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Data.v20.1.dll"/>
+    <ROW Component="DevExpress.Data.v20.1.resources.dll" ComponentId="{6784D3D2-B13B-4FEF-AF83-62547BC8A7DE}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Data.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.Data.v20.1.resources.dll_1" ComponentId="{0597D853-9F38-44A8-80A1-04BDC61BE931}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Data.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.Data.v20.1.resources.dll_2" ComponentId="{8B2D47DB-CA0D-4136-BB5C-293822E54193}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Data.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.Data.v20.1.resources.dll_3" ComponentId="{F6D06F2F-D5BF-43C0-B254-CEF0FB4F978B}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Data.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.UI.dll" ComponentId="{6CAA0883-3AAC-433C-BF28-8C7EE1A97103}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.UI.dll"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.UI.resources.dll" ComponentId="{C03594E3-CB32-4329-9378-9C93B09CA166}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.UI.resources.dll"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.UI.resources.dll_1" ComponentId="{2813F637-B37F-4D04-8BD9-3C0CDD5E976A}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.UI.resources.dll_1"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.UI.resources.dll_2" ComponentId="{51D757EE-DC5F-48DD-B20B-33C3C40E422D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.UI.resources.dll_2"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.UI.resources.dll_3" ComponentId="{F2247675-49B3-4065-806F-1FA43D215412}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.UI.resources.dll_3"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.dll" ComponentId="{E6AC2768-2973-45ED-BF69-F5ABC43D9D77}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.dll"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.resources.dll" ComponentId="{50B1C7C1-D5A0-4D87-AC37-D959B9AAE4FD}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.resources.dll_1" ComponentId="{155852DA-2865-46A0-8AA7-FA8224FC033D}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.resources.dll_2" ComponentId="{1B9FDCED-C955-48A6-9AF2-C4BB5E8F9D8D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.DataAccess.v20.1.resources.dll_3" ComponentId="{39ED9F1A-98D9-4AFE-8276-82EA23F182E1}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.DataAccess.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.Diagram.v20.1.Core.dll" ComponentId="{905F037D-37C8-4F46-9D32-F39C1262E2CA}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Diagram.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Diagram.v20.1.Core.resources.dll" ComponentId="{FE6C4739-6A1E-4ABA-AB30-70C3FEA0D8AE}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Diagram.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Diagram.v20.1.Core.resources.dll_1" ComponentId="{05C0BF31-D2B1-4910-BCE2-3D717920EB86}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Diagram.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Diagram.v20.1.Core.resources.dll_2" ComponentId="{8543FA0A-8FAE-467C-BAD1-1F4B0E6947B0}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Diagram.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Diagram.v20.1.Core.resources.dll_3" ComponentId="{A0F281DA-DC55-4AB2-BC6E-7ABFA1356F9F}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Diagram.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Dialogs.v20.1.Core.dll" ComponentId="{1E6B8FF3-4DE7-4B96-871A-4BAF9D443742}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Dialogs.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Dialogs.v20.1.Core.resources.dll" ComponentId="{42C0BBCB-A981-45A2-BB5C-B32B8D71FA51}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Dialogs.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Dialogs.v20.1.Core.resources.dll_1" ComponentId="{BFCE758A-93DA-4090-9D46-7AB160189EB7}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Dialogs.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Dialogs.v20.1.Core.resources.dll_2" ComponentId="{1B5C002F-6EA4-4260-9769-00287624799D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Dialogs.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Dialogs.v20.1.Core.resources.dll_3" ComponentId="{09F50DFF-3FE2-4243-93C7-0FBD3F3097F5}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Dialogs.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.ExpressApp.v20.1.dll" ComponentId="{C558CF1C-FB16-4493-9C08-3826DA28077E}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.ExpressApp.v20.1.dll"/>
+    <ROW Component="DevExpress.ExpressApp.v20.1.resources.dll" ComponentId="{A35F35AE-5DC1-4127-941E-DBB25EFAABB8}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.ExpressApp.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.ExpressApp.v20.1.resources.dll_1" ComponentId="{D406FB18-7819-4B31-88AE-223218DF7011}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.ExpressApp.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.ExpressApp.v20.1.resources.dll_2" ComponentId="{A8134B9B-FB50-4FC4-B03D-212D31D7C1CA}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.ExpressApp.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.ExpressApp.v20.1.resources.dll_3" ComponentId="{4FE149F1-EBC6-4637-8D4A-BCE8DC48B93B}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.ExpressApp.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.Images.v20.1.dll" ComponentId="{9022994A-2198-4032-A1D0-5F98B27A2C77}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Images.v20.1.dll"/>
+    <ROW Component="DevExpress.Office.v20.1.Core.dll" ComponentId="{82DA1527-6317-4B50-8058-D610EA4EEB53}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Office.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Office.v20.1.Core.resources.dll" ComponentId="{832FB354-22B6-4A8C-A6FD-50F3FFF7ACB1}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Office.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Office.v20.1.Core.resources.dll_1" ComponentId="{80DA9E7E-5F03-43BB-AE25-5F786840A916}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Office.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Office.v20.1.Core.resources.dll_2" ComponentId="{25909DBE-0B9E-4AA5-94EC-969D2BEE7237}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Office.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Office.v20.1.Core.resources.dll_3" ComponentId="{3C2FBDB4-959F-4D2E-8152-2504DE5A8CBC}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Office.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Pdf.v20.1.Core.dll" ComponentId="{CB557413-54C3-429F-BEB4-E36393AD0E2F}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Pdf.v20.1.Core.resources.dll" ComponentId="{B14AD54E-C6D3-41CE-913C-223D0A0A9C61}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Pdf.v20.1.Core.resources.dll_1" ComponentId="{A8312B4A-F2C7-4EFB-A420-C54DE65C32B1}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Pdf.v20.1.Core.resources.dll_2" ComponentId="{3B87D624-98CE-4342-A4EE-32AA967184A0}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Pdf.v20.1.Core.resources.dll_3" ComponentId="{58464A5D-DCCB-4905-9BF9-0FEBC6D86B02}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Pdf.v20.1.Drawing.dll" ComponentId="{7B8B2A95-1A31-453B-A20F-FB1C59110F4E}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Pdf.v20.1.Drawing.dll"/>
+    <ROW Component="DevExpress.Persistent.Base.v20.1.dll" ComponentId="{1FEF2AAD-47B9-4C7F-956B-B932BF4131D0}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Persistent.Base.v20.1.dll"/>
+    <ROW Component="DevExpress.Persistent.Base.v20.1.resources.dll" ComponentId="{D0908EE3-4AAA-4523-BA4F-7AB11EAC1B0A}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Persistent.Base.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.Persistent.Base.v20.1.resources.dll_1" ComponentId="{29DE6CB7-610B-4CCA-AB80-8E83FD28DF0C}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Persistent.Base.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.Persistent.Base.v20.1.resources.dll_2" ComponentId="{5B94A8CD-37BA-46FA-98A1-812161B1A978}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Persistent.Base.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.Persistent.Base.v20.1.resources.dll_3" ComponentId="{C8BAFD10-8B74-4E89-AF53-39FB0458088C}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Persistent.Base.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.PivotGrid.v20.1.Core.dll" ComponentId="{7BACA0DD-AAF4-46ED-929C-DDF18F0C10F6}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.PivotGrid.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.PivotGrid.v20.1.Core.resources.dll" ComponentId="{1547E4B4-7EF3-4A40-B534-5CC3DBFDAF1A}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.PivotGrid.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.PivotGrid.v20.1.Core.resources.dll_1" ComponentId="{7C7AA011-2077-4435-8B39-F485BFDBBD9F}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.PivotGrid.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.PivotGrid.v20.1.Core.resources.dll_2" ComponentId="{0B796740-15D3-4826-8548-1BDC2AAAADFC}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.PivotGrid.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.PivotGrid.v20.1.Core.resources.dll_3" ComponentId="{9344578B-B923-4612-943B-58B0414D8934}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.PivotGrid.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Printing.v20.1.Core.dll" ComponentId="{0E45C522-933E-43BD-B977-CFEF578CCB76}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Printing.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Printing.v20.1.Core.resources.dll" ComponentId="{220EAC73-4313-4E55-A1E3-0C50DA3B7280}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Printing.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Printing.v20.1.Core.resources.dll_1" ComponentId="{4586D22C-A910-47A9-85DC-A3B57233052F}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Printing.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Printing.v20.1.Core.resources.dll_2" ComponentId="{07A8456E-68C5-41A7-8544-A061E27511CC}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Printing.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Printing.v20.1.Core.resources.dll_3" ComponentId="{3C3D209F-B2AC-4506-A6FA-21BACB7C8DFB}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Printing.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.RichEdit.v20.1.Core.dll" ComponentId="{18FC9881-BCE6-4395-A095-C9B043508955}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.RichEdit.v20.1.Core.resources.dll" ComponentId="{36FD18E3-AD1E-4D80-816A-0E74784E6AE6}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.RichEdit.v20.1.Core.resources.dll_1" ComponentId="{59E55BDD-607D-4BB2-BBAC-1B945E055A36}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.RichEdit.v20.1.Core.resources.dll_2" ComponentId="{9C1558AB-BA08-493D-AD91-EE05DB39CED8}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.RichEdit.v20.1.Core.resources.dll_3" ComponentId="{1F906E70-EBF8-44EC-B218-005A8C1E563D}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.RichEdit.v20.1.Export.dll" ComponentId="{2CC79B9D-5820-4C02-9339-748957352BFA}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v20.1.Export.dll"/>
+    <ROW Component="DevExpress.Sparkline.v20.1.Core.dll" ComponentId="{58A015C6-6DBF-4178-91B6-6DE04D778C89}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Sparkline.v20.1.Core.resources.dll" ComponentId="{59ADABDE-7C90-4DF2-96DA-D731BBEBC6F7}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.Sparkline.v20.1.Core.resources.dll_1" ComponentId="{7389069E-40CC-401B-9BC1-A5E4CDA89674}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Sparkline.v20.1.Core.resources.dll_2" ComponentId="{11F49B0F-01C4-4837-AC71-F0FE870C4EA3}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Sparkline.v20.1.Core.resources.dll_3" ComponentId="{7693DA4D-6139-486F-87DF-FE6A9DEA5FC1}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Sparkline.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Utils.v20.1.UI.dll" ComponentId="{9AEF6C49-F236-4299-8426-D4BC8287B9E5}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.UI.dll"/>
+    <ROW Component="DevExpress.Utils.v20.1.UI.resources.dll" ComponentId="{F2EE7CEE-A4F9-4E67-889D-DB85EE339FD6}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.UI.resources.dll"/>
+    <ROW Component="DevExpress.Utils.v20.1.UI.resources.dll_1" ComponentId="{A17A488B-E474-404F-A91D-BC3C5E87C1BA}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.UI.resources.dll_1"/>
+    <ROW Component="DevExpress.Utils.v20.1.UI.resources.dll_2" ComponentId="{7026FC41-71E1-458C-B4E4-A5ABA782B78B}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.UI.resources.dll_2"/>
+    <ROW Component="DevExpress.Utils.v20.1.UI.resources.dll_3" ComponentId="{54A94366-DAA0-483B-9CEF-77828ED2933A}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.UI.resources.dll_3"/>
+    <ROW Component="DevExpress.Utils.v20.1.dll" ComponentId="{E22C074A-8BFD-4444-86E2-B37FEC6B267F}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.dll"/>
+    <ROW Component="DevExpress.Utils.v20.1.resources.dll" ComponentId="{8B62EBE9-E8AC-456F-88E7-6AB923162E8A}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.Utils.v20.1.resources.dll_1" ComponentId="{2EC57514-3BA1-4E47-9539-17C2DB07D83F}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.Utils.v20.1.resources.dll_2" ComponentId="{05CFFC4C-7F37-4DD7-99D7-2738D7652C70}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.Utils.v20.1.resources.dll_3" ComponentId="{6EEDA697-4C30-4722-A973-E76C1B0B2C4E}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Utils.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpo.v20.1.dll" ComponentId="{88958F88-B93D-4B0F-AEAB-946A6C4F331D}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v20.1.dll"/>
+    <ROW Component="DevExpress.Xpo.v20.1.resources.dll" ComponentId="{2782EA33-5B2C-473A-AD75-7C8488055826}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.Xpo.v20.1.resources.dll_1" ComponentId="{6E4DD6DF-0BCC-4244-A378-6A23645955E6}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpo.v20.1.resources.dll_2" ComponentId="{BCDCC30F-1BEB-478B-A098-193C75C56380}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpo.v20.1.resources.dll_3" ComponentId="{89B67BAE-2AE7-4B91-B1F6-EE8C9B7DDA4B}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpo.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraBars.v20.1.dll" ComponentId="{6D045B4C-126D-4E76-89DA-CFC445448D20}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraBars.v20.1.resources.dll" ComponentId="{1CD7755D-55EE-4971-BEBA-1F7233256A9B}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraBars.v20.1.resources.dll_1" ComponentId="{B7639C93-A224-41FC-A4F6-E7D0C52AD402}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraBars.v20.1.resources.dll_2" ComponentId="{C1E351BE-5E6F-4A0C-AA48-E908253557A8}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraBars.v20.1.resources.dll_3" ComponentId="{DC3E6403-E4CF-43DF-B086-C5CEDDEEEB6F}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraBars.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.Extensions.dll" ComponentId="{E480728A-555B-4D3E-A0C5-39D15429737F}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.Extensions.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.Wizard.dll" ComponentId="{1A905F57-63E0-4DE9-AFEA-1F60B4C74FD3}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.Wizard.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.Wizard.resources.dll" ComponentId="{EA1D57E4-1544-443C-A8A5-2ABCE866A9A7}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.Wizard.resources.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_1" ComponentId="{4C0F186F-D21A-4CB5-89CC-68B41D414B40}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_2" ComponentId="{3D9052A7-3057-4003-9317-6C21FB83C5FD}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_3" ComponentId="{3958E151-0EDE-47CB-8737-F88E9E605DFD}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.dll" ComponentId="{47A96955-103A-401C-AA79-A72C491AD3E5}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.resources.dll" ComponentId="{1922D227-8C06-4A6D-AD98-814C2C3F4A81}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.resources.dll_1" ComponentId="{62416639-BA9A-421F-A25C-994F4B21924B}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.resources.dll_2" ComponentId="{739B48A2-4CA8-429E-819C-1737A8BC94C6}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraCharts.v20.1.resources.dll_3" ComponentId="{DF16962C-F33D-4260-B3BB-E77F989C7B60}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraDiagram.v20.1.dll" ComponentId="{9A3E8FA2-338F-4E56-BBE0-80B46033250B}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraDiagram.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraDialogs.v20.1.dll" ComponentId="{6D253F5D-4367-43CF-AC3E-22495BF95AE0}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraDialogs.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v20.1.dll" ComponentId="{9BA27730-ADCC-45AF-91B1-D00750AA8C62}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v20.1.resources.dll" ComponentId="{AB4F5764-0B05-45E6-BD08-D09DBC523AEA}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v20.1.resources.dll_1" ComponentId="{72A06ADF-EFCA-42DD-8786-EA3B71419DF2}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraEditors.v20.1.resources.dll_2" ComponentId="{6D51564D-DE81-444B-A959-80BB3FD18783}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraEditors.v20.1.resources.dll_3" ComponentId="{E5A45F88-005F-4BAC-8FC9-75F45AFF43D4}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraEditors.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraGauges.v20.1.Core.dll" ComponentId="{047873AF-9F71-4BD1-B96E-FBAD631FB3F7}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraGauges.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.XtraGauges.v20.1.Core.resources.dll" ComponentId="{9BD84F91-EE95-4ED2-94E9-F3D4E393461B}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraGauges.v20.1.Core.resources.dll"/>
+    <ROW Component="DevExpress.XtraGauges.v20.1.Core.resources.dll_1" ComponentId="{2E855055-C262-4411-BE20-A20205A10BF5}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraGauges.v20.1.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraGauges.v20.1.Core.resources.dll_2" ComponentId="{B36B259B-D8A3-4A1C-8125-669D5F2F278F}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraGauges.v20.1.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraGauges.v20.1.Core.resources.dll_3" ComponentId="{7A55B169-2CCB-46EF-B783-0036F969D8F4}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraGauges.v20.1.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraGrid.v20.1.dll" ComponentId="{2BCB148D-D370-413F-A251-EFD02C467C2B}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v20.1.resources.dll" ComponentId="{7E7282F4-87D0-49AD-BB68-62E6AB6F536B}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v20.1.resources.dll_1" ComponentId="{96FAF8FA-19FC-4AB8-AC59-838743FED951}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraGrid.v20.1.resources.dll_2" ComponentId="{49C2F8F5-BA90-43FC-B100-1D4ACF38BC19}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraGrid.v20.1.resources.dll_3" ComponentId="{C352F6A3-1564-4210-AE1A-32E90C263E2B}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraGrid.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraLayout.v20.1.dll" ComponentId="{22A3AF5F-3755-4A22-B462-DCBE0433D502}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v20.1.resources.dll" ComponentId="{A4059113-DBD2-4E81-ABD4-3C8B229CF660}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v20.1.resources.dll_1" ComponentId="{DD455C4A-3325-424F-938E-4BE4370DB834}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraLayout.v20.1.resources.dll_2" ComponentId="{9286ED29-3FC3-4C3D-8499-BC3F6883C1BE}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraLayout.v20.1.resources.dll_3" ComponentId="{56C14440-6671-4E1F-8ABB-EB1D2B3C557E}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraLayout.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraNavBar.v20.1.dll" ComponentId="{6A21493D-30AE-47D2-91C9-7FEEB90E867D}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraNavBar.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraNavBar.v20.1.resources.dll" ComponentId="{38683F6C-0232-477C-9B72-17D0D4B06A88}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraNavBar.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraNavBar.v20.1.resources.dll_1" ComponentId="{3266FFC1-1CC2-4F42-82C9-D36ADB95ACAD}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraNavBar.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraNavBar.v20.1.resources.dll_2" ComponentId="{3DA91C4F-0C6C-412F-AE7F-F57F185E2012}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraNavBar.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraNavBar.v20.1.resources.dll_3" ComponentId="{F7ABA36A-7316-49BD-B299-50DA7402742C}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraNavBar.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraPivotGrid.v20.1.dll" ComponentId="{DA3765F8-5AC2-4B7A-B2CC-EA8ABB3B4DAB}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraPivotGrid.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraPivotGrid.v20.1.resources.dll" ComponentId="{B0D4E22F-A943-4BCD-8A7A-CEB0C7E572DB}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraPivotGrid.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraPivotGrid.v20.1.resources.dll_1" ComponentId="{050F8827-9951-4E74-9870-7713B33C08AF}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraPivotGrid.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraPivotGrid.v20.1.resources.dll_2" ComponentId="{C01661D0-EF20-4984-B46C-CC7E0965A0FB}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraPivotGrid.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraPivotGrid.v20.1.resources.dll_3" ComponentId="{33CAA8D6-601F-4290-AFF3-156195C1478C}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraPivotGrid.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraPrinting.v20.1.dll" ComponentId="{BA616C20-6787-493D-BDDA-A350CD110552}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v20.1.resources.dll" ComponentId="{8B38AD92-0189-4CCC-907E-5BF44AA7356F}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v20.1.resources.dll_1" ComponentId="{EB79755E-A8AA-4042-9D49-2D38F52DE565}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraPrinting.v20.1.resources.dll_2" ComponentId="{CC368684-253E-4C46-A23B-8F9D448B1C42}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraPrinting.v20.1.resources.dll_3" ComponentId="{1CE008DF-BD4F-4FB8-B083-D648264219D6}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraPrinting.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.Extensions.dll" ComponentId="{C724AC9D-1AF2-4821-9FDF-4D2D0A431D66}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.Extensions.dll"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.Extensions.resources.dll" ComponentId="{07844A50-07E3-4564-BD50-511785FFA935}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.Extensions.resources.dll"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.Extensions.resources.dll_1" ComponentId="{30472018-7E4F-4ABA-AD63-2C784E1751DD}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.Extensions.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.Extensions.resources.dll_2" ComponentId="{CCF1ADC1-C9D0-47D8-8C19-4BB07DDFF64D}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.Extensions.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.Extensions.resources.dll_3" ComponentId="{19E74D08-4B08-4AD9-A449-225428D7A3D4}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.Extensions.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.dll" ComponentId="{37C362C4-D124-42A7-BF6A-4CAEB7D7E872}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.resources.dll" ComponentId="{FCFF6AD9-C821-4E0E-AF08-344486442CBA}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.resources.dll_1" ComponentId="{EDAAB4EF-033E-4B69-A9F8-E382B51B7727}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.resources.dll_2" ComponentId="{40876F8F-9590-4741-98CF-304005B85B79}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraReports.v20.1.resources.dll_3" ComponentId="{3D335536-04DD-4618-9C26-F899884B8495}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraRichEdit.v20.1.dll" ComponentId="{7B13E4F9-938A-4607-B17F-E04DD808575F}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraRichEdit.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraRichEdit.v20.1.resources.dll" ComponentId="{29E54C42-91AF-455E-900D-ED171A5098D9}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraRichEdit.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraRichEdit.v20.1.resources.dll_1" ComponentId="{8DD1D1C4-C67A-4567-B1D1-23F5BF6A582C}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraRichEdit.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraRichEdit.v20.1.resources.dll_2" ComponentId="{CE58057A-F9E1-45BC-AB43-71313B815CEF}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraRichEdit.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraRichEdit.v20.1.resources.dll_3" ComponentId="{18CF25F5-73B0-4D4D-BC62-8A45B6A7FBA4}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraRichEdit.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraTreeList.v20.1.dll" ComponentId="{A03AD6C6-9B5B-479D-93CF-BC56A4B01821}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v20.1.resources.dll" ComponentId="{F9DBB6C4-4793-48F4-98AB-DFA20114B6AB}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraTreeList.v20.1.resources.dll_1" ComponentId="{3B890803-457E-47C5-B761-0D56C10DFF35}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraTreeList.v20.1.resources.dll_2" ComponentId="{C8B2C38D-8AB7-4662-BEF3-7912AF1D156E}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraTreeList.v20.1.resources.dll_3" ComponentId="{0295AE5B-E10D-4E0F-BA1A-B10F53CBB14C}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraTreeList.v20.1.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraVerticalGrid.v20.1.dll" ComponentId="{A8782C85-0790-44DC-96FF-600715F5489A}" Directory_="lib_Dir" Attributes="0" KeyPath="DevExpress.XtraVerticalGrid.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraVerticalGrid.v20.1.resources.dll" ComponentId="{75B8385C-7FF8-4905-B036-DDF39EAAE5A3}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraVerticalGrid.v20.1.resources.dll"/>
+    <ROW Component="DevExpress.XtraVerticalGrid.v20.1.resources.dll_1" ComponentId="{9B815ADB-E6D4-4487-AB3B-3134C25017D3}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraVerticalGrid.v20.1.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraVerticalGrid.v20.1.resources.dll_2" ComponentId="{65370B62-FDEE-43A1-9725-64DD665FA4FA}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraVerticalGrid.v20.1.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraVerticalGrid.v20.1.resources.dll_3" ComponentId="{2B8916DB-92EF-4489-BE2D-E4A030F9C0CA}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraVerticalGrid.v20.1.resources.dll_3"/>
+    <ROW Component="MAIN_BACKUP.bak" ComponentId="{8248E976-BBCD-4947-999C-62AE3AED1406}" Directory_="backup_Dir" Attributes="0" KeyPath="MAIN_BACKUP.bak" Type="0"/>
+    <ROW Component="Microsoft.Data.SqlClient.SNI.x64.dll" ComponentId="{F716CBFF-4EFA-49B5-B999-58562F2A286E}" Directory_="lib_Dir" Attributes="256" KeyPath="Microsoft.Data.SqlClient.SNI.x64.dll"/>
+    <ROW Component="Microsoft.Data.SqlClient.SNI.x86.dll" ComponentId="{D6C677BE-947A-4EC4-8ABE-213C556ED533}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.SNI.x86.dll"/>
+    <ROW Component="Microsoft.Data.SqlClient.dll" ComponentId="{2DFC0B57-4A2F-43F9-A2BA-18A71769C813}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.dll"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll" ComponentId="{63EA89B5-E150-4670-A559-93542C83F070}" Directory_="de_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_1" ComponentId="{C2779A52-2865-40B5-BF74-0DED4B246DA1}" Directory_="es_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_1"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_2" ComponentId="{CCBB6836-B09B-484F-B74E-B0194A5DC366}" Directory_="fr_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_2"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_3" ComponentId="{F0392B89-CB8D-4251-AA27-0C20D042D55F}" Directory_="it_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_3"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_4" ComponentId="{28C62D06-1AFB-4CD8-8734-E11C6B2C118E}" Directory_="ja_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_4"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_5" ComponentId="{D4786D78-4C63-4F6A-9F51-8D6D7967BB9A}" Directory_="ko_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_5"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_6" ComponentId="{0F9791AE-CB22-4A4F-BCB5-B927780DA4EA}" Directory_="ptBR_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_6"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_7" ComponentId="{2FC312CA-22E6-43F0-9B16-38D6AE92B551}" Directory_="ru_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_7"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_8" ComponentId="{6DF9423E-802D-45EE-AC68-03DEDBFF41B8}" Directory_="zhHans_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_8"/>
+    <ROW Component="Microsoft.Data.SqlClient.resources.dll_9" ComponentId="{D620EE8F-7AE6-412C-A06B-FD05B415EDEB}" Directory_="zhHant_Dir" Attributes="0" KeyPath="Microsoft.Data.SqlClient.resources.dll_9"/>
+    <ROW Component="Microsoft.Data.Tools.Sql.BatchParser.dll" ComponentId="{2D7F7D21-0F34-48D1-8893-F715C1C25D4C}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.Data.Tools.Sql.BatchParser.dll"/>
+    <ROW Component="Microsoft.Identity.Client.dll" ComponentId="{C1239AA2-224E-4659-92E5-D8F28EA60C81}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.Identity.Client.dll"/>
+    <ROW Component="Microsoft.IdentityModel.JsonWebTokens.dll" ComponentId="{41324E10-C6EF-4D7A-89B3-FF39639C5268}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.IdentityModel.JsonWebTokens.dll"/>
+    <ROW Component="Microsoft.IdentityModel.Logging.dll" ComponentId="{C1EABF9F-FEDF-4903-BB11-94B2744472C2}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.IdentityModel.Logging.dll"/>
+    <ROW Component="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" ComponentId="{F625B443-421C-4EFE-8547-7A083DE33245}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"/>
+    <ROW Component="Microsoft.IdentityModel.Protocols.dll" ComponentId="{0337629C-3340-4944-A54A-A1BE31877C88}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.IdentityModel.Protocols.dll"/>
+    <ROW Component="Microsoft.IdentityModel.Tokens.dll" ComponentId="{DE5F6715-8CAD-4F45-8A89-6E8FA4BA3FEC}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.IdentityModel.Tokens.dll"/>
+    <ROW Component="Microsoft.SqlServer.Assessment.Types.dll" ComponentId="{9FC94795-1302-48A5-B864-7B39F4183B9B}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Assessment.Types.dll"/>
+    <ROW Component="Microsoft.SqlServer.Assessment.dll" ComponentId="{63BA1459-C327-4791-A588-11093C8E3E10}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Assessment.dll"/>
+    <ROW Component="Microsoft.SqlServer.ConnectionInfo.dll" ComponentId="{4587743A-9F36-4117-B529-69852A4DDBC4}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.ConnectionInfo.dll"/>
+    <ROW Component="Microsoft.SqlServer.Dmf.Common.dll" ComponentId="{B9B44A03-B02E-4DAF-A5B4-50A9985E7726}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Dmf.Common.dll"/>
+    <ROW Component="Microsoft.SqlServer.Dmf.dll" ComponentId="{7B164C59-A072-4035-8331-702616A5BBE2}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Dmf.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.Assessment.dll" ComponentId="{DE49D2E7-7E05-4CE1-B2C6-E9197B104B99}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.Assessment.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.Collector.dll" ComponentId="{9E184CFB-346F-4C75-8EC4-9A5EE7942481}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.Collector.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.CollectorEnum.dll" ComponentId="{65444A97-8FA4-40C5-B219-35C474C9A19E}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.CollectorEnum.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.HadrData.dll" ComponentId="{4CB70668-99AA-4789-9A05-B0BCC980ECEC}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.HadrData.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.HadrModel.dll" ComponentId="{6E055F6F-F893-4E8D-AD46-D742A3951910}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.HadrModel.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.RegisteredServers.dll" ComponentId="{C9E9552C-6A16-49E9-BE04-0B9FA8994451}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.RegisteredServers.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.Sdk.Sfc.dll" ComponentId="{F7F4DC7A-223E-4FC0-840C-68C1D34C516C}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.Sdk.Sfc.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.SmoMetadataProvider.dll" ComponentId="{E4ABDD06-4AD1-423F-A66B-BC7E13F074BB}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.SmoMetadataProvider.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.SqlParser.dll" ComponentId="{B0B58744-D745-440D-B563-81075B630192}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.SqlParser.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.SqlScriptPublish.dll" ComponentId="{6FDA82DB-5AD6-498C-BB3F-6CA386BE244F}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.SqlScriptPublish.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.XEvent.dll" ComponentId="{8FDFCC96-0B9B-4914-897C-79250BA92B02}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.XEvent.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.XEventDbScoped.dll" ComponentId="{3B45B91E-0FB3-4BE0-B48D-93B34374C504}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.XEventDbScoped.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.XEventDbScopedEnum.dll" ComponentId="{17221D53-148A-48D5-A706-DF0AFBBFF0C7}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.XEventDbScopedEnum.dll"/>
+    <ROW Component="Microsoft.SqlServer.Management.XEventEnum.dll" ComponentId="{D3783B0E-28DF-41CE-9E03-33BD0E40F62E}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Management.XEventEnum.dll"/>
+    <ROW Component="Microsoft.SqlServer.PolicyEnum.dll" ComponentId="{9ED2C87F-9F6A-46E9-AE46-6DCC28DD3DA1}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.PolicyEnum.dll"/>
+    <ROW Component="Microsoft.SqlServer.RegSvrEnum.dll" ComponentId="{47469AED-5556-43BC-9C1C-A6C04DA80EE0}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.RegSvrEnum.dll"/>
+    <ROW Component="Microsoft.SqlServer.ServiceBrokerEnum.dll" ComponentId="{0C245531-6FB3-4720-9C70-50DFF7B7DB49}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.ServiceBrokerEnum.dll"/>
+    <ROW Component="Microsoft.SqlServer.Smo.Notebook.dll" ComponentId="{2FB554F7-9008-4A50-B44F-52A97CD375AF}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Smo.Notebook.dll"/>
+    <ROW Component="Microsoft.SqlServer.Smo.dll" ComponentId="{98CD44A5-C0A6-4506-BC42-7EA121D3E52E}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Smo.dll"/>
+    <ROW Component="Microsoft.SqlServer.SmoExtended.dll" ComponentId="{B300A183-7A63-46A1-BCD6-93200A8E5F1D}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.SmoExtended.dll"/>
+    <ROW Component="Microsoft.SqlServer.SqlClrProvider.dll" ComponentId="{531E598F-EEBF-487D-87D4-05A5BD27BFF4}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.SqlClrProvider.dll"/>
+    <ROW Component="Microsoft.SqlServer.SqlEnum.dll" ComponentId="{0ADE6BA1-4331-4D6F-8C5F-BE919E0A91CA}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.SqlEnum.dll"/>
+    <ROW Component="Microsoft.SqlServer.SqlWmiManagement.dll" ComponentId="{B272E138-13B2-4B19-AC32-BE17BEC1F4E8}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.SqlWmiManagement.dll"/>
+    <ROW Component="Microsoft.SqlServer.WmiEnum.dll" ComponentId="{76CC6AB2-928E-4F05-B350-CF5CD73376CB}" Directory_="lib_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.WmiEnum.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{BED8F1A7-E0F2-416E-A022-8F2230663D47}" Directory_="lib_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{C9DC1F6B-3DD8-4D73-B35F-9A16EE936188}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="QuanLyQuanCafe.exe" ComponentId="{47ACDEB2-C32C-48A6-8D50-3DEAA554A7D3}" Directory_="APPDIR" Attributes="0" KeyPath="QuanLyQuanCafe.exe"/>
+    <ROW Component="QuanLyQuanCafe.exe.config" ComponentId="{2C62676C-5DD3-4138-8C73-F775A46D9E22}" Directory_="APPDIR" Attributes="0" KeyPath="QuanLyQuanCafe.exe.config" Type="0"/>
+    <ROW Component="QuanLyQuanCafe.pdb" ComponentId="{8B1108BD-1B1F-4CB9-BAE5-31E7B6B065E9}" Directory_="lib_Dir" Attributes="0" KeyPath="QuanLyQuanCafe.pdb" Type="4"/>
+    <ROW Component="SQLCMD.EXE" ComponentId="{5D2C46B3-E346-460E-B04D-0ACA900B1C39}" Directory_="createDB_Dir" Attributes="256" KeyPath="SQLCMD.EXE"/>
+    <ROW Component="System.IdentityModel.Tokens.Jwt.dll" ComponentId="{75C9E546-3424-49AD-99A0-8BC59BE73561}" Directory_="lib_Dir" Attributes="0" KeyPath="System.IdentityModel.Tokens.Jwt.dll"/>
+    <ROW Component="batchparser.dll" ComponentId="{9B5AD7F7-1F12-4C63-867D-EC6A469BC7DE}" Directory_="createDB_Dir" Attributes="256" KeyPath="batchparser.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="MAIN_BACKUP.bak" Component_="MAIN_BACKUP.bak" FileName="MAIN_B~1.BAK|MAIN_BACKUP.bak" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\data\backup\MAIN_BACKUP.bak" SelfReg="false"/>
+    <ROW File="batchparser.dll" Component_="batchparser.dll" FileName="BATCHP~1.DLL|batchparser.dll" Attributes="2" SourcePath="..\QuanLyQuanCafe\bin\Release\data\createDB\batchparser.dll" SelfReg="false"/>
+    <ROW File="CreateDatabaseforolder.bat" Component_="CreateDatabaseforolder.bat" FileName="CREATE~1.BAT|Create Database for older.bat" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\data\createDB\Create Database for older.bat" SelfReg="false"/>
+    <ROW File="CREATEDATABASEforWIN10.ps1" Component_="CreateDatabaseforolder.bat" FileName="CREATE~1.PS1|CREATE DATABASE for WIN10.ps1" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\data\createDB\CREATE DATABASE for WIN10.ps1" SelfReg="false"/>
+    <ROW File="QuanLyQuanCafe.sql" Component_="CreateDatabaseforolder.bat" FileName="QUANLY~1.SQL|QuanLyQuanCafe.sql" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\data\createDB\QuanLyQuanCafe.sql" SelfReg="false"/>
+    <ROW File="SQLCMD.EXE" Component_="SQLCMD.EXE" FileName="SQLCMD.EXE" Attributes="2" SourcePath="..\QuanLyQuanCafe\bin\Release\data\createDB\SQLCMD.EXE" SelfReg="false"/>
+    <ROW File="SQLCMD.rll" Component_="CreateDatabaseforolder.bat" FileName="SQLCMD.rll" Attributes="2" SourcePath="..\QuanLyQuanCafe\bin\Release\data\createDB\SQLCMD.rll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v20.1.resources.dll" Component_="DevExpress.Data.v20.1.resources.dll" FileName="DEVEXP~1.DLL|DevExpress.Data.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Data.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.resources.dll" Component_="DevExpress.DataAccess.v20.1.resources.dll" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.DataAccess.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.UI.resources.dll" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll" FileName="DEVEXP~3.DLL|DevExpress.DataAccess.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.DataAccess.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Diagram.v20.1.Core.resources.dll" Component_="DevExpress.Diagram.v20.1.Core.resources.dll" FileName="DEVEXP~4.DLL|DevExpress.Diagram.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Diagram.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Dialogs.v20.1.Core.resources.dll" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll" FileName="DEVEXP~5.DLL|DevExpress.Dialogs.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Dialogs.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.ExpressApp.v20.1.resources.dll" Component_="DevExpress.ExpressApp.v20.1.resources.dll" FileName="DEVEXP~6.DLL|DevExpress.ExpressApp.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.ExpressApp.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v20.1.Core.resources.dll" Component_="DevExpress.Office.v20.1.Core.resources.dll" FileName="DEVEXP~7.DLL|DevExpress.Office.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Office.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Core.resources.dll" Component_="DevExpress.Pdf.v20.1.Core.resources.dll" FileName="DEVEXP~8.DLL|DevExpress.Pdf.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Pdf.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Persistent.Base.v20.1.resources.dll" Component_="DevExpress.Persistent.Base.v20.1.resources.dll" FileName="DEVEXP~9.DLL|DevExpress.Persistent.Base.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Persistent.Base.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.PivotGrid.v20.1.Core.resources.dll" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll" FileName="DEVEX~10.DLL|DevExpress.PivotGrid.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.PivotGrid.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v20.1.Core.resources.dll" Component_="DevExpress.Printing.v20.1.Core.resources.dll" FileName="DEVEX~11.DLL|DevExpress.Printing.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Printing.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v20.1.Core.resources.dll" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll" FileName="DEVEX~12.DLL|DevExpress.RichEdit.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.RichEdit.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v20.1.Core.resources.dll" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll" FileName="DEVEX~13.DLL|DevExpress.Sparkline.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Sparkline.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.resources.dll" Component_="DevExpress.Utils.v20.1.resources.dll" FileName="DEVEX~14.DLL|DevExpress.Utils.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Utils.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.UI.resources.dll" Component_="DevExpress.Utils.v20.1.UI.resources.dll" FileName="DEVEX~15.DLL|DevExpress.Utils.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Utils.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v20.1.resources.dll" Component_="DevExpress.Xpo.v20.1.resources.dll" FileName="DEVEX~16.DLL|DevExpress.Xpo.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.Xpo.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v20.1.resources.dll" Component_="DevExpress.XtraBars.v20.1.resources.dll" FileName="DEVEX~17.DLL|DevExpress.XtraBars.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraBars.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.resources.dll" Component_="DevExpress.XtraCharts.v20.1.resources.dll" FileName="DEVEX~18.DLL|DevExpress.XtraCharts.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraCharts.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.Wizard.resources.dll" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll" FileName="DEVEX~19.DLL|DevExpress.XtraCharts.v20.1.Wizard.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraCharts.v20.1.Wizard.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v20.1.resources.dll" Component_="DevExpress.XtraEditors.v20.1.resources.dll" FileName="DEVEX~20.DLL|DevExpress.XtraEditors.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraEditors.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGauges.v20.1.Core.resources.dll" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll" FileName="DEVEX~21.DLL|DevExpress.XtraGauges.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraGauges.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v20.1.resources.dll" Component_="DevExpress.XtraGrid.v20.1.resources.dll" FileName="DEVEX~22.DLL|DevExpress.XtraGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v20.1.resources.dll" Component_="DevExpress.XtraLayout.v20.1.resources.dll" FileName="DEVEX~23.DLL|DevExpress.XtraLayout.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraLayout.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraNavBar.v20.1.resources.dll" Component_="DevExpress.XtraNavBar.v20.1.resources.dll" FileName="DEVEX~24.DLL|DevExpress.XtraNavBar.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraNavBar.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPivotGrid.v20.1.resources.dll" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll" FileName="DEVEX~25.DLL|DevExpress.XtraPivotGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraPivotGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v20.1.resources.dll" Component_="DevExpress.XtraPrinting.v20.1.resources.dll" FileName="DEVEX~26.DLL|DevExpress.XtraPrinting.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraPrinting.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.Extensions.resources.dll" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll" FileName="DEVEX~27.DLL|DevExpress.XtraReports.v20.1.Extensions.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraReports.v20.1.Extensions.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.resources.dll" Component_="DevExpress.XtraReports.v20.1.resources.dll" FileName="DEVEX~28.DLL|DevExpress.XtraReports.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraReports.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraRichEdit.v20.1.resources.dll" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll" FileName="DEVEX~29.DLL|DevExpress.XtraRichEdit.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraRichEdit.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v20.1.resources.dll" Component_="DevExpress.XtraTreeList.v20.1.resources.dll" FileName="DEVEX~30.DLL|DevExpress.XtraTreeList.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraTreeList.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraVerticalGrid.v20.1.resources.dll" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll" FileName="DEVEX~31.DLL|DevExpress.XtraVerticalGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\DevExpress.XtraVerticalGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll" Component_="Microsoft.Data.SqlClient.resources.dll" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\de\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Charts.v20.1.Core.dll" Component_="DevExpress.Charts.v20.1.Core.dll" FileName="DEVEXP~1.DLL|DevExpress.Charts.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Charts.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.CodeParser.v20.1.dll" Component_="DevExpress.CodeParser.v20.1.dll" FileName="DEVEXP~2.DLL|DevExpress.CodeParser.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.CodeParser.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.Desktop.v20.1.dll" Component_="DevExpress.Data.Desktop.v20.1.dll" FileName="DEVEXP~3.DLL|DevExpress.Data.Desktop.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Data.Desktop.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.Desktop.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~1.XML|DevExpress.Data.Desktop.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Data.Desktop.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v20.1.dll" Component_="DevExpress.Data.v20.1.dll" FileName="DEVEXP~4.DLL|DevExpress.Data.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Data.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~2.XML|DevExpress.Data.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Data.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.dll" Component_="DevExpress.DataAccess.v20.1.dll" FileName="DEVEXP~5.DLL|DevExpress.DataAccess.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.DataAccess.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.UI.dll" Component_="DevExpress.DataAccess.v20.1.UI.dll" FileName="DEVEXP~6.DLL|DevExpress.DataAccess.v20.1.UI.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.DataAccess.v20.1.UI.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.UI.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~3.XML|DevExpress.DataAccess.v20.1.UI.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.DataAccess.v20.1.UI.xml" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~4.XML|DevExpress.DataAccess.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.DataAccess.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Diagram.v20.1.Core.dll" Component_="DevExpress.Diagram.v20.1.Core.dll" FileName="DEVEXP~7.DLL|DevExpress.Diagram.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Diagram.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Diagram.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~5.XML|DevExpress.Diagram.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Diagram.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Dialogs.v20.1.Core.dll" Component_="DevExpress.Dialogs.v20.1.Core.dll" FileName="DEVEXP~8.DLL|DevExpress.Dialogs.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Dialogs.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.ExpressApp.v20.1.dll" Component_="DevExpress.ExpressApp.v20.1.dll" FileName="DEVEXP~9.DLL|DevExpress.ExpressApp.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.ExpressApp.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.ExpressApp.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~6.XML|DevExpress.ExpressApp.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.ExpressApp.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Images.v20.1.dll" Component_="DevExpress.Images.v20.1.dll" FileName="DEVEX~10.DLL|DevExpress.Images.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Images.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v20.1.Core.dll" Component_="DevExpress.Office.v20.1.Core.dll" FileName="DEVEX~11.DLL|DevExpress.Office.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Office.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~7.XML|DevExpress.Office.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Office.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Core.dll" Component_="DevExpress.Pdf.v20.1.Core.dll" FileName="DEVEX~12.DLL|DevExpress.Pdf.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Pdf.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~8.XML|DevExpress.Pdf.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Pdf.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Drawing.dll" Component_="DevExpress.Pdf.v20.1.Drawing.dll" FileName="DEVEX~13.DLL|DevExpress.Pdf.v20.1.Drawing.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Pdf.v20.1.Drawing.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Drawing.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEXP~9.XML|DevExpress.Pdf.v20.1.Drawing.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Pdf.v20.1.Drawing.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Persistent.Base.v20.1.dll" Component_="DevExpress.Persistent.Base.v20.1.dll" FileName="DEVEX~14.DLL|DevExpress.Persistent.Base.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Persistent.Base.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Persistent.Base.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~10.XML|DevExpress.Persistent.Base.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Persistent.Base.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.PivotGrid.v20.1.Core.dll" Component_="DevExpress.PivotGrid.v20.1.Core.dll" FileName="DEVEX~15.DLL|DevExpress.PivotGrid.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.PivotGrid.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.PivotGrid.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~11.XML|DevExpress.PivotGrid.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.PivotGrid.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v20.1.Core.dll" Component_="DevExpress.Printing.v20.1.Core.dll" FileName="DEVEX~16.DLL|DevExpress.Printing.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Printing.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~12.XML|DevExpress.Printing.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Printing.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v20.1.Core.dll" Component_="DevExpress.RichEdit.v20.1.Core.dll" FileName="DEVEX~17.DLL|DevExpress.RichEdit.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.RichEdit.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~13.XML|DevExpress.RichEdit.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.RichEdit.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v20.1.Export.dll" Component_="DevExpress.RichEdit.v20.1.Export.dll" FileName="DEVEX~18.DLL|DevExpress.RichEdit.v20.1.Export.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.RichEdit.v20.1.Export.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v20.1.Core.dll" Component_="DevExpress.Sparkline.v20.1.Core.dll" FileName="DEVEX~19.DLL|DevExpress.Sparkline.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Sparkline.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~14.XML|DevExpress.Sparkline.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Sparkline.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.dll" Component_="DevExpress.Utils.v20.1.dll" FileName="DEVEX~20.DLL|DevExpress.Utils.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Utils.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.UI.dll" Component_="DevExpress.Utils.v20.1.UI.dll" FileName="DEVEX~21.DLL|DevExpress.Utils.v20.1.UI.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Utils.v20.1.UI.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.UI.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~15.XML|DevExpress.Utils.v20.1.UI.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Utils.v20.1.UI.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~16.XML|DevExpress.Utils.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Utils.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v20.1.dll" Component_="DevExpress.Xpo.v20.1.dll" FileName="DEVEX~22.DLL|DevExpress.Xpo.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Xpo.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~17.XML|DevExpress.Xpo.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.Xpo.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v20.1.dll" Component_="DevExpress.XtraBars.v20.1.dll" FileName="DEVEX~23.DLL|DevExpress.XtraBars.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraBars.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~18.XML|DevExpress.XtraBars.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraBars.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.dll" Component_="DevExpress.XtraCharts.v20.1.dll" FileName="DEVEX~24.DLL|DevExpress.XtraCharts.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraCharts.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.Extensions.dll" Component_="DevExpress.XtraCharts.v20.1.Extensions.dll" FileName="DEVEX~25.DLL|DevExpress.XtraCharts.v20.1.Extensions.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraCharts.v20.1.Extensions.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.Wizard.dll" Component_="DevExpress.XtraCharts.v20.1.Wizard.dll" FileName="DEVEX~26.DLL|DevExpress.XtraCharts.v20.1.Wizard.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraCharts.v20.1.Wizard.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.Wizard.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~19.XML|DevExpress.XtraCharts.v20.1.Wizard.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraCharts.v20.1.Wizard.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~20.XML|DevExpress.XtraCharts.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraCharts.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraDiagram.v20.1.dll" Component_="DevExpress.XtraDiagram.v20.1.dll" FileName="DEVEX~27.DLL|DevExpress.XtraDiagram.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraDiagram.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraDiagram.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~21.XML|DevExpress.XtraDiagram.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraDiagram.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraDialogs.v20.1.dll" Component_="DevExpress.XtraDialogs.v20.1.dll" FileName="DEVEX~28.DLL|DevExpress.XtraDialogs.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraDialogs.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraDialogs.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~22.XML|DevExpress.XtraDialogs.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraDialogs.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v20.1.dll" Component_="DevExpress.XtraEditors.v20.1.dll" FileName="DEVEX~29.DLL|DevExpress.XtraEditors.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraEditors.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~23.XML|DevExpress.XtraEditors.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraEditors.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGauges.v20.1.Core.dll" Component_="DevExpress.XtraGauges.v20.1.Core.dll" FileName="DEVEX~30.DLL|DevExpress.XtraGauges.v20.1.Core.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraGauges.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGauges.v20.1.Core.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~24.XML|DevExpress.XtraGauges.v20.1.Core.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraGauges.v20.1.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v20.1.dll" Component_="DevExpress.XtraGrid.v20.1.dll" FileName="DEVEX~31.DLL|DevExpress.XtraGrid.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraGrid.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~25.XML|DevExpress.XtraGrid.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraGrid.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v20.1.dll" Component_="DevExpress.XtraLayout.v20.1.dll" FileName="DEVEX~32.DLL|DevExpress.XtraLayout.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraLayout.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~26.XML|DevExpress.XtraLayout.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraLayout.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraNavBar.v20.1.dll" Component_="DevExpress.XtraNavBar.v20.1.dll" FileName="DEVEX~33.DLL|DevExpress.XtraNavBar.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraNavBar.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraNavBar.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~27.XML|DevExpress.XtraNavBar.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraNavBar.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPivotGrid.v20.1.dll" Component_="DevExpress.XtraPivotGrid.v20.1.dll" FileName="DEVEX~34.DLL|DevExpress.XtraPivotGrid.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraPivotGrid.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPivotGrid.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~28.XML|DevExpress.XtraPivotGrid.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraPivotGrid.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v20.1.dll" Component_="DevExpress.XtraPrinting.v20.1.dll" FileName="DEVEX~35.DLL|DevExpress.XtraPrinting.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraPrinting.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~29.XML|DevExpress.XtraPrinting.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraPrinting.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.dll" Component_="DevExpress.XtraReports.v20.1.dll" FileName="DEVEX~36.DLL|DevExpress.XtraReports.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraReports.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.Extensions.dll" Component_="DevExpress.XtraReports.v20.1.Extensions.dll" FileName="DEVEX~37.DLL|DevExpress.XtraReports.v20.1.Extensions.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraReports.v20.1.Extensions.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.Extensions.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~30.XML|DevExpress.XtraReports.v20.1.Extensions.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraReports.v20.1.Extensions.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~31.XML|DevExpress.XtraReports.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraReports.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraRichEdit.v20.1.dll" Component_="DevExpress.XtraRichEdit.v20.1.dll" FileName="DEVEX~38.DLL|DevExpress.XtraRichEdit.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraRichEdit.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraRichEdit.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~32.XML|DevExpress.XtraRichEdit.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraRichEdit.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v20.1.dll" Component_="DevExpress.XtraTreeList.v20.1.dll" FileName="DEVEX~39.DLL|DevExpress.XtraTreeList.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraTreeList.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~33.XML|DevExpress.XtraTreeList.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraTreeList.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraVerticalGrid.v20.1.dll" Component_="DevExpress.XtraVerticalGrid.v20.1.dll" FileName="DEVEX~40.DLL|DevExpress.XtraVerticalGrid.v20.1.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraVerticalGrid.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraVerticalGrid.v20.1.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="DEVEX~34.XML|DevExpress.XtraVerticalGrid.v20.1.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\DevExpress.XtraVerticalGrid.v20.1.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v20.1.resources.dll_1" Component_="DevExpress.Data.v20.1.resources.dll_1" FileName="DEVEXP~1.DLL|DevExpress.Data.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Data.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.resources.dll_1" Component_="DevExpress.DataAccess.v20.1.resources.dll_1" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.DataAccess.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.UI.resources.dll_1" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll_1" FileName="DEVEXP~3.DLL|DevExpress.DataAccess.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.DataAccess.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Diagram.v20.1.Core.resources.dll_1" Component_="DevExpress.Diagram.v20.1.Core.resources.dll_1" FileName="DEVEXP~4.DLL|DevExpress.Diagram.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Diagram.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Dialogs.v20.1.Core.resources.dll_1" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll_1" FileName="DEVEXP~5.DLL|DevExpress.Dialogs.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Dialogs.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.ExpressApp.v20.1.resources.dll_1" Component_="DevExpress.ExpressApp.v20.1.resources.dll_1" FileName="DEVEXP~6.DLL|DevExpress.ExpressApp.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.ExpressApp.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v20.1.Core.resources.dll_1" Component_="DevExpress.Office.v20.1.Core.resources.dll_1" FileName="DEVEXP~7.DLL|DevExpress.Office.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Office.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Core.resources.dll_1" Component_="DevExpress.Pdf.v20.1.Core.resources.dll_1" FileName="DEVEXP~8.DLL|DevExpress.Pdf.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Pdf.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Persistent.Base.v20.1.resources.dll_1" Component_="DevExpress.Persistent.Base.v20.1.resources.dll_1" FileName="DEVEXP~9.DLL|DevExpress.Persistent.Base.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Persistent.Base.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.PivotGrid.v20.1.Core.resources.dll_1" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll_1" FileName="DEVEX~10.DLL|DevExpress.PivotGrid.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.PivotGrid.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v20.1.Core.resources.dll_1" Component_="DevExpress.Printing.v20.1.Core.resources.dll_1" FileName="DEVEX~11.DLL|DevExpress.Printing.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Printing.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v20.1.Core.resources.dll_1" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll_1" FileName="DEVEX~12.DLL|DevExpress.RichEdit.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.RichEdit.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v20.1.Core.resources.dll_1" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll_1" FileName="DEVEX~13.DLL|DevExpress.Sparkline.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Sparkline.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.resources.dll_1" Component_="DevExpress.Utils.v20.1.resources.dll_1" FileName="DEVEX~14.DLL|DevExpress.Utils.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Utils.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.UI.resources.dll_1" Component_="DevExpress.Utils.v20.1.UI.resources.dll_1" FileName="DEVEX~15.DLL|DevExpress.Utils.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Utils.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v20.1.resources.dll_1" Component_="DevExpress.Xpo.v20.1.resources.dll_1" FileName="DEVEX~16.DLL|DevExpress.Xpo.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.Xpo.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v20.1.resources.dll_1" Component_="DevExpress.XtraBars.v20.1.resources.dll_1" FileName="DEVEX~17.DLL|DevExpress.XtraBars.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraBars.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.resources.dll_1" Component_="DevExpress.XtraCharts.v20.1.resources.dll_1" FileName="DEVEX~18.DLL|DevExpress.XtraCharts.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraCharts.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_1" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_1" FileName="DEVEX~19.DLL|DevExpress.XtraCharts.v20.1.Wizard.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraCharts.v20.1.Wizard.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v20.1.resources.dll_1" Component_="DevExpress.XtraEditors.v20.1.resources.dll_1" FileName="DEVEX~20.DLL|DevExpress.XtraEditors.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraEditors.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGauges.v20.1.Core.resources.dll_1" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll_1" FileName="DEVEX~21.DLL|DevExpress.XtraGauges.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraGauges.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v20.1.resources.dll_1" Component_="DevExpress.XtraGrid.v20.1.resources.dll_1" FileName="DEVEX~22.DLL|DevExpress.XtraGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v20.1.resources.dll_1" Component_="DevExpress.XtraLayout.v20.1.resources.dll_1" FileName="DEVEX~23.DLL|DevExpress.XtraLayout.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraLayout.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraNavBar.v20.1.resources.dll_1" Component_="DevExpress.XtraNavBar.v20.1.resources.dll_1" FileName="DEVEX~24.DLL|DevExpress.XtraNavBar.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraNavBar.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPivotGrid.v20.1.resources.dll_1" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll_1" FileName="DEVEX~25.DLL|DevExpress.XtraPivotGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraPivotGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v20.1.resources.dll_1" Component_="DevExpress.XtraPrinting.v20.1.resources.dll_1" FileName="DEVEX~26.DLL|DevExpress.XtraPrinting.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraPrinting.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.Extensions.resources.dll_1" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll_1" FileName="DEVEX~27.DLL|DevExpress.XtraReports.v20.1.Extensions.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraReports.v20.1.Extensions.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.resources.dll_1" Component_="DevExpress.XtraReports.v20.1.resources.dll_1" FileName="DEVEX~28.DLL|DevExpress.XtraReports.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraReports.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraRichEdit.v20.1.resources.dll_1" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll_1" FileName="DEVEX~29.DLL|DevExpress.XtraRichEdit.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraRichEdit.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v20.1.resources.dll_1" Component_="DevExpress.XtraTreeList.v20.1.resources.dll_1" FileName="DEVEX~30.DLL|DevExpress.XtraTreeList.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraTreeList.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraVerticalGrid.v20.1.resources.dll_1" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll_1" FileName="DEVEX~31.DLL|DevExpress.XtraVerticalGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\DevExpress.XtraVerticalGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_1" Component_="Microsoft.Data.SqlClient.resources.dll_1" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\es\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_2" Component_="Microsoft.Data.SqlClient.resources.dll_2" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\fr\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_3" Component_="Microsoft.Data.SqlClient.resources.dll_3" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\it\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v20.1.resources.dll_2" Component_="DevExpress.Data.v20.1.resources.dll_2" FileName="DEVEXP~1.DLL|DevExpress.Data.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Data.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.resources.dll_2" Component_="DevExpress.DataAccess.v20.1.resources.dll_2" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.DataAccess.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.UI.resources.dll_2" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll_2" FileName="DEVEXP~3.DLL|DevExpress.DataAccess.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.DataAccess.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Diagram.v20.1.Core.resources.dll_2" Component_="DevExpress.Diagram.v20.1.Core.resources.dll_2" FileName="DEVEXP~4.DLL|DevExpress.Diagram.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Diagram.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Dialogs.v20.1.Core.resources.dll_2" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll_2" FileName="DEVEXP~5.DLL|DevExpress.Dialogs.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Dialogs.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.ExpressApp.v20.1.resources.dll_2" Component_="DevExpress.ExpressApp.v20.1.resources.dll_2" FileName="DEVEXP~6.DLL|DevExpress.ExpressApp.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.ExpressApp.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v20.1.Core.resources.dll_2" Component_="DevExpress.Office.v20.1.Core.resources.dll_2" FileName="DEVEXP~7.DLL|DevExpress.Office.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Office.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Core.resources.dll_2" Component_="DevExpress.Pdf.v20.1.Core.resources.dll_2" FileName="DEVEXP~8.DLL|DevExpress.Pdf.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Pdf.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Persistent.Base.v20.1.resources.dll_2" Component_="DevExpress.Persistent.Base.v20.1.resources.dll_2" FileName="DEVEXP~9.DLL|DevExpress.Persistent.Base.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Persistent.Base.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.PivotGrid.v20.1.Core.resources.dll_2" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll_2" FileName="DEVEX~10.DLL|DevExpress.PivotGrid.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.PivotGrid.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v20.1.Core.resources.dll_2" Component_="DevExpress.Printing.v20.1.Core.resources.dll_2" FileName="DEVEX~11.DLL|DevExpress.Printing.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Printing.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v20.1.Core.resources.dll_2" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll_2" FileName="DEVEX~12.DLL|DevExpress.RichEdit.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.RichEdit.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v20.1.Core.resources.dll_2" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll_2" FileName="DEVEX~13.DLL|DevExpress.Sparkline.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Sparkline.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.resources.dll_2" Component_="DevExpress.Utils.v20.1.resources.dll_2" FileName="DEVEX~14.DLL|DevExpress.Utils.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Utils.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.UI.resources.dll_2" Component_="DevExpress.Utils.v20.1.UI.resources.dll_2" FileName="DEVEX~15.DLL|DevExpress.Utils.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Utils.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v20.1.resources.dll_2" Component_="DevExpress.Xpo.v20.1.resources.dll_2" FileName="DEVEX~16.DLL|DevExpress.Xpo.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.Xpo.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v20.1.resources.dll_2" Component_="DevExpress.XtraBars.v20.1.resources.dll_2" FileName="DEVEX~17.DLL|DevExpress.XtraBars.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraBars.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.resources.dll_2" Component_="DevExpress.XtraCharts.v20.1.resources.dll_2" FileName="DEVEX~18.DLL|DevExpress.XtraCharts.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraCharts.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_2" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_2" FileName="DEVEX~19.DLL|DevExpress.XtraCharts.v20.1.Wizard.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraCharts.v20.1.Wizard.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v20.1.resources.dll_2" Component_="DevExpress.XtraEditors.v20.1.resources.dll_2" FileName="DEVEX~20.DLL|DevExpress.XtraEditors.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraEditors.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGauges.v20.1.Core.resources.dll_2" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll_2" FileName="DEVEX~21.DLL|DevExpress.XtraGauges.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraGauges.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v20.1.resources.dll_2" Component_="DevExpress.XtraGrid.v20.1.resources.dll_2" FileName="DEVEX~22.DLL|DevExpress.XtraGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v20.1.resources.dll_2" Component_="DevExpress.XtraLayout.v20.1.resources.dll_2" FileName="DEVEX~23.DLL|DevExpress.XtraLayout.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraLayout.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraNavBar.v20.1.resources.dll_2" Component_="DevExpress.XtraNavBar.v20.1.resources.dll_2" FileName="DEVEX~24.DLL|DevExpress.XtraNavBar.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraNavBar.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPivotGrid.v20.1.resources.dll_2" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll_2" FileName="DEVEX~25.DLL|DevExpress.XtraPivotGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraPivotGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v20.1.resources.dll_2" Component_="DevExpress.XtraPrinting.v20.1.resources.dll_2" FileName="DEVEX~26.DLL|DevExpress.XtraPrinting.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraPrinting.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.Extensions.resources.dll_2" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll_2" FileName="DEVEX~27.DLL|DevExpress.XtraReports.v20.1.Extensions.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraReports.v20.1.Extensions.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.resources.dll_2" Component_="DevExpress.XtraReports.v20.1.resources.dll_2" FileName="DEVEX~28.DLL|DevExpress.XtraReports.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraReports.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraRichEdit.v20.1.resources.dll_2" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll_2" FileName="DEVEX~29.DLL|DevExpress.XtraRichEdit.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraRichEdit.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v20.1.resources.dll_2" Component_="DevExpress.XtraTreeList.v20.1.resources.dll_2" FileName="DEVEX~30.DLL|DevExpress.XtraTreeList.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraTreeList.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraVerticalGrid.v20.1.resources.dll_2" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll_2" FileName="DEVEX~31.DLL|DevExpress.XtraVerticalGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\DevExpress.XtraVerticalGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_4" Component_="Microsoft.Data.SqlClient.resources.dll_4" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ja\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_5" Component_="Microsoft.Data.SqlClient.resources.dll_5" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ko\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.dll" Component_="Microsoft.Data.SqlClient.dll" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.SqlClient.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.pdb" Component_="Microsoft.Data.SqlClient.dll" FileName="MICROS~1.PDB|Microsoft.Data.SqlClient.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.SqlClient.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.SNI.x64.dll" Component_="Microsoft.Data.SqlClient.SNI.x64.dll" FileName="MICROS~2.DLL|Microsoft.Data.SqlClient.SNI.x64.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.SqlClient.SNI.x64.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.SNI.x64.pdb" Component_="Microsoft.Data.SqlClient.SNI.x64.dll" FileName="MICROS~2.PDB|Microsoft.Data.SqlClient.SNI.x64.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.SqlClient.SNI.x64.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.SNI.x86.dll" Component_="Microsoft.Data.SqlClient.SNI.x86.dll" FileName="MICROS~3.DLL|Microsoft.Data.SqlClient.SNI.x86.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.SqlClient.SNI.x86.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.SNI.x86.pdb" Component_="Microsoft.Data.SqlClient.SNI.x86.dll" FileName="MICROS~3.PDB|Microsoft.Data.SqlClient.SNI.x86.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.SqlClient.SNI.x86.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~1.XML|Microsoft.Data.SqlClient.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.SqlClient.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Data.Tools.Sql.BatchParser.dll" Component_="Microsoft.Data.Tools.Sql.BatchParser.dll" FileName="MICROS~4.DLL|Microsoft.Data.Tools.Sql.BatchParser.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.Tools.Sql.BatchParser.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.Tools.Sql.BatchParser.pdb" Component_="Microsoft.Data.Tools.Sql.BatchParser.dll" FileName="MICROS~4.PDB|Microsoft.Data.Tools.Sql.BatchParser.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.Tools.Sql.BatchParser.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Data.Tools.Sql.BatchParser.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~2.XML|Microsoft.Data.Tools.Sql.BatchParser.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Data.Tools.Sql.BatchParser.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Identity.Client.dll" Component_="Microsoft.Identity.Client.dll" FileName="MICROS~5.DLL|Microsoft.Identity.Client.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Identity.Client.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Identity.Client.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~3.XML|Microsoft.Identity.Client.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.Identity.Client.xml" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.JsonWebTokens.dll" Component_="Microsoft.IdentityModel.JsonWebTokens.dll" FileName="MICROS~6.DLL|Microsoft.IdentityModel.JsonWebTokens.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.JsonWebTokens.dll" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.JsonWebTokens.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~4.XML|Microsoft.IdentityModel.JsonWebTokens.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.JsonWebTokens.xml" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Logging.dll" Component_="Microsoft.IdentityModel.Logging.dll" FileName="MICROS~7.DLL|Microsoft.IdentityModel.Logging.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Logging.dll" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Logging.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~5.XML|Microsoft.IdentityModel.Logging.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Logging.xml" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Protocols.dll" Component_="Microsoft.IdentityModel.Protocols.dll" FileName="MICROS~8.DLL|Microsoft.IdentityModel.Protocols.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Protocols.dll" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" Component_="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" FileName="MICROS~9.DLL|Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Protocols.OpenIdConnect.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~6.XML|Microsoft.IdentityModel.Protocols.OpenIdConnect.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Protocols.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~7.XML|Microsoft.IdentityModel.Protocols.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Protocols.xml" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Tokens.dll" Component_="Microsoft.IdentityModel.Tokens.dll" FileName="MICRO~10.DLL|Microsoft.IdentityModel.Tokens.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Tokens.dll" SelfReg="false"/>
+    <ROW File="Microsoft.IdentityModel.Tokens.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~8.XML|Microsoft.IdentityModel.Tokens.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.IdentityModel.Tokens.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Assessment.dll" Component_="Microsoft.SqlServer.Assessment.dll" FileName="MICRO~11.DLL|Microsoft.SqlServer.Assessment.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Assessment.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Assessment.Types.dll" Component_="Microsoft.SqlServer.Assessment.Types.dll" FileName="MICRO~12.DLL|Microsoft.SqlServer.Assessment.Types.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Assessment.Types.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.ConnectionInfo.dll" Component_="Microsoft.SqlServer.ConnectionInfo.dll" FileName="MICRO~13.DLL|Microsoft.SqlServer.ConnectionInfo.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.ConnectionInfo.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.ConnectionInfo.pdb" Component_="Microsoft.SqlServer.ConnectionInfo.dll" FileName="MICROS~5.PDB|Microsoft.SqlServer.ConnectionInfo.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.ConnectionInfo.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.ConnectionInfo.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICROS~9.XML|Microsoft.SqlServer.ConnectionInfo.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.ConnectionInfo.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Dmf.Common.dll" Component_="Microsoft.SqlServer.Dmf.Common.dll" FileName="MICRO~14.DLL|Microsoft.SqlServer.Dmf.Common.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Dmf.Common.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Dmf.Common.pdb" Component_="Microsoft.SqlServer.Dmf.Common.dll" FileName="MICROS~6.PDB|Microsoft.SqlServer.Dmf.Common.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Dmf.Common.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Dmf.Common.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~10.XML|Microsoft.SqlServer.Dmf.Common.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Dmf.Common.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Dmf.dll" Component_="Microsoft.SqlServer.Dmf.dll" FileName="MICRO~15.DLL|Microsoft.SqlServer.Dmf.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Dmf.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Dmf.pdb" Component_="Microsoft.SqlServer.Dmf.dll" FileName="MICROS~7.PDB|Microsoft.SqlServer.Dmf.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Dmf.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Dmf.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~11.XML|Microsoft.SqlServer.Dmf.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Dmf.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Assessment.dll" Component_="Microsoft.SqlServer.Management.Assessment.dll" FileName="MICRO~16.DLL|Microsoft.SqlServer.Management.Assessment.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Assessment.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Assessment.pdb" Component_="Microsoft.SqlServer.Management.Assessment.dll" FileName="MICROS~8.PDB|Microsoft.SqlServer.Management.Assessment.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Assessment.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Assessment.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~12.XML|Microsoft.SqlServer.Management.Assessment.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Assessment.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Collector.dll" Component_="Microsoft.SqlServer.Management.Collector.dll" FileName="MICRO~17.DLL|Microsoft.SqlServer.Management.Collector.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Collector.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Collector.pdb" Component_="Microsoft.SqlServer.Management.Collector.dll" FileName="MICROS~9.PDB|Microsoft.SqlServer.Management.Collector.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Collector.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Collector.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~13.XML|Microsoft.SqlServer.Management.Collector.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Collector.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.CollectorEnum.dll" Component_="Microsoft.SqlServer.Management.CollectorEnum.dll" FileName="MICRO~18.DLL|Microsoft.SqlServer.Management.CollectorEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.CollectorEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.CollectorEnum.pdb" Component_="Microsoft.SqlServer.Management.CollectorEnum.dll" FileName="MICRO~10.PDB|Microsoft.SqlServer.Management.CollectorEnum.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.CollectorEnum.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.CollectorEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~14.XML|Microsoft.SqlServer.Management.CollectorEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.CollectorEnum.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.HadrData.dll" Component_="Microsoft.SqlServer.Management.HadrData.dll" FileName="MICRO~19.DLL|Microsoft.SqlServer.Management.HadrData.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.HadrData.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.HadrData.pdb" Component_="Microsoft.SqlServer.Management.HadrData.dll" FileName="MICRO~11.PDB|Microsoft.SqlServer.Management.HadrData.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.HadrData.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.HadrData.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~15.XML|Microsoft.SqlServer.Management.HadrData.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.HadrData.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.HadrModel.dll" Component_="Microsoft.SqlServer.Management.HadrModel.dll" FileName="MICRO~20.DLL|Microsoft.SqlServer.Management.HadrModel.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.HadrModel.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.HadrModel.pdb" Component_="Microsoft.SqlServer.Management.HadrModel.dll" FileName="MICRO~12.PDB|Microsoft.SqlServer.Management.HadrModel.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.HadrModel.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.HadrModel.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~16.XML|Microsoft.SqlServer.Management.HadrModel.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.HadrModel.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.RegisteredServers.dll" Component_="Microsoft.SqlServer.Management.RegisteredServers.dll" FileName="MICRO~21.DLL|Microsoft.SqlServer.Management.RegisteredServers.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.RegisteredServers.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.RegisteredServers.pdb" Component_="Microsoft.SqlServer.Management.RegisteredServers.dll" FileName="MICRO~13.PDB|Microsoft.SqlServer.Management.RegisteredServers.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.RegisteredServers.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.RegisteredServers.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~17.XML|Microsoft.SqlServer.Management.RegisteredServers.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.RegisteredServers.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Sdk.Sfc.dll" Component_="Microsoft.SqlServer.Management.Sdk.Sfc.dll" FileName="MICRO~22.DLL|Microsoft.SqlServer.Management.Sdk.Sfc.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Sdk.Sfc.pdb" Component_="Microsoft.SqlServer.Management.Sdk.Sfc.dll" FileName="MICRO~14.PDB|Microsoft.SqlServer.Management.Sdk.Sfc.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Sdk.Sfc.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.Sdk.Sfc.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~18.XML|Microsoft.SqlServer.Management.Sdk.Sfc.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.Sdk.Sfc.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SmoMetadataProvider.dll" Component_="Microsoft.SqlServer.Management.SmoMetadataProvider.dll" FileName="MICRO~23.DLL|Microsoft.SqlServer.Management.SmoMetadataProvider.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SmoMetadataProvider.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SmoMetadataProvider.pdb" Component_="Microsoft.SqlServer.Management.SmoMetadataProvider.dll" FileName="MICRO~15.PDB|Microsoft.SqlServer.Management.SmoMetadataProvider.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SmoMetadataProvider.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SmoMetadataProvider.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~19.XML|Microsoft.SqlServer.Management.SmoMetadataProvider.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SmoMetadataProvider.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SqlParser.dll" Component_="Microsoft.SqlServer.Management.SqlParser.dll" FileName="MICRO~24.DLL|Microsoft.SqlServer.Management.SqlParser.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SqlParser.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SqlParser.pdb" Component_="Microsoft.SqlServer.Management.SqlParser.dll" FileName="MICRO~16.PDB|Microsoft.SqlServer.Management.SqlParser.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SqlParser.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SqlParser.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~20.XML|Microsoft.SqlServer.Management.SqlParser.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SqlParser.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SqlScriptPublish.dll" Component_="Microsoft.SqlServer.Management.SqlScriptPublish.dll" FileName="MICRO~25.DLL|Microsoft.SqlServer.Management.SqlScriptPublish.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SqlScriptPublish.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SqlScriptPublish.pdb" Component_="Microsoft.SqlServer.Management.SqlScriptPublish.dll" FileName="MICRO~17.PDB|Microsoft.SqlServer.Management.SqlScriptPublish.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SqlScriptPublish.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.SqlScriptPublish.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~21.XML|Microsoft.SqlServer.Management.SqlScriptPublish.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.SqlScriptPublish.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEvent.dll" Component_="Microsoft.SqlServer.Management.XEvent.dll" FileName="MICRO~26.DLL|Microsoft.SqlServer.Management.XEvent.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEvent.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEvent.pdb" Component_="Microsoft.SqlServer.Management.XEvent.dll" FileName="MICRO~18.PDB|Microsoft.SqlServer.Management.XEvent.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEvent.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEvent.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~22.XML|Microsoft.SqlServer.Management.XEvent.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEvent.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventDbScoped.dll" Component_="Microsoft.SqlServer.Management.XEventDbScoped.dll" FileName="MICRO~27.DLL|Microsoft.SqlServer.Management.XEventDbScoped.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventDbScoped.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventDbScoped.pdb" Component_="Microsoft.SqlServer.Management.XEventDbScoped.dll" FileName="MICRO~19.PDB|Microsoft.SqlServer.Management.XEventDbScoped.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventDbScoped.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventDbScoped.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~23.XML|Microsoft.SqlServer.Management.XEventDbScoped.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventDbScoped.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventDbScopedEnum.dll" Component_="Microsoft.SqlServer.Management.XEventDbScopedEnum.dll" FileName="MICRO~28.DLL|Microsoft.SqlServer.Management.XEventDbScopedEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventDbScopedEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventDbScopedEnum.pdb" Component_="Microsoft.SqlServer.Management.XEventDbScopedEnum.dll" FileName="MICRO~20.PDB|Microsoft.SqlServer.Management.XEventDbScopedEnum.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventDbScopedEnum.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventDbScopedEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~24.XML|Microsoft.SqlServer.Management.XEventDbScopedEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventDbScopedEnum.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventEnum.dll" Component_="Microsoft.SqlServer.Management.XEventEnum.dll" FileName="MICRO~29.DLL|Microsoft.SqlServer.Management.XEventEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventEnum.pdb" Component_="Microsoft.SqlServer.Management.XEventEnum.dll" FileName="MICRO~21.PDB|Microsoft.SqlServer.Management.XEventEnum.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventEnum.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Management.XEventEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~25.XML|Microsoft.SqlServer.Management.XEventEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Management.XEventEnum.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.PolicyEnum.dll" Component_="Microsoft.SqlServer.PolicyEnum.dll" FileName="MICRO~30.DLL|Microsoft.SqlServer.PolicyEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.PolicyEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.PolicyEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~26.XML|Microsoft.SqlServer.PolicyEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.PolicyEnum.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.RegSvrEnum.dll" Component_="Microsoft.SqlServer.RegSvrEnum.dll" FileName="MICRO~31.DLL|Microsoft.SqlServer.RegSvrEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.RegSvrEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.RegSvrEnum.pdb" Component_="Microsoft.SqlServer.RegSvrEnum.dll" FileName="MICRO~22.PDB|Microsoft.SqlServer.RegSvrEnum.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.RegSvrEnum.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.RegSvrEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~27.XML|Microsoft.SqlServer.RegSvrEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.RegSvrEnum.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.ServiceBrokerEnum.dll" Component_="Microsoft.SqlServer.ServiceBrokerEnum.dll" FileName="MICRO~32.DLL|Microsoft.SqlServer.ServiceBrokerEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.ServiceBrokerEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.ServiceBrokerEnum.pdb" Component_="Microsoft.SqlServer.ServiceBrokerEnum.dll" FileName="MICRO~23.PDB|Microsoft.SqlServer.ServiceBrokerEnum.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.ServiceBrokerEnum.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.ServiceBrokerEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~28.XML|Microsoft.SqlServer.ServiceBrokerEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.ServiceBrokerEnum.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Smo.dll" Component_="Microsoft.SqlServer.Smo.dll" FileName="MICRO~33.DLL|Microsoft.SqlServer.Smo.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Smo.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Smo.Notebook.dll" Component_="Microsoft.SqlServer.Smo.Notebook.dll" FileName="MICRO~34.DLL|Microsoft.SqlServer.Smo.Notebook.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Smo.Notebook.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Smo.Notebook.pdb" Component_="Microsoft.SqlServer.Smo.Notebook.dll" FileName="MICRO~24.PDB|Microsoft.SqlServer.Smo.Notebook.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Smo.Notebook.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Smo.Notebook.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~29.XML|Microsoft.SqlServer.Smo.Notebook.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Smo.Notebook.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Smo.pdb" Component_="Microsoft.SqlServer.Smo.dll" FileName="MICRO~25.PDB|Microsoft.SqlServer.Smo.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Smo.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.Smo.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~30.XML|Microsoft.SqlServer.Smo.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.Smo.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SmoExtended.dll" Component_="Microsoft.SqlServer.SmoExtended.dll" FileName="MICRO~35.DLL|Microsoft.SqlServer.SmoExtended.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SmoExtended.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SmoExtended.pdb" Component_="Microsoft.SqlServer.SmoExtended.dll" FileName="MICRO~26.PDB|Microsoft.SqlServer.SmoExtended.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SmoExtended.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SmoExtended.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~31.XML|Microsoft.SqlServer.SmoExtended.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SmoExtended.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlClrProvider.dll" Component_="Microsoft.SqlServer.SqlClrProvider.dll" FileName="MICRO~36.DLL|Microsoft.SqlServer.SqlClrProvider.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlClrProvider.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlClrProvider.pdb" Component_="Microsoft.SqlServer.SqlClrProvider.dll" FileName="MICRO~27.PDB|Microsoft.SqlServer.SqlClrProvider.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlClrProvider.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlEnum.dll" Component_="Microsoft.SqlServer.SqlEnum.dll" FileName="MICRO~37.DLL|Microsoft.SqlServer.SqlEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlEnum.pdb" Component_="Microsoft.SqlServer.SqlEnum.dll" FileName="MICRO~28.PDB|Microsoft.SqlServer.SqlEnum.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlEnum.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~32.XML|Microsoft.SqlServer.SqlEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlEnum.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlWmiManagement.dll" Component_="Microsoft.SqlServer.SqlWmiManagement.dll" FileName="MICRO~38.DLL|Microsoft.SqlServer.SqlWmiManagement.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlWmiManagement.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlWmiManagement.pdb" Component_="Microsoft.SqlServer.SqlWmiManagement.dll" FileName="MICRO~29.PDB|Microsoft.SqlServer.SqlWmiManagement.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlWmiManagement.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.SqlWmiManagement.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~33.XML|Microsoft.SqlServer.SqlWmiManagement.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.SqlWmiManagement.xml" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.WmiEnum.dll" Component_="Microsoft.SqlServer.WmiEnum.dll" FileName="MICRO~39.DLL|Microsoft.SqlServer.WmiEnum.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.WmiEnum.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.WmiEnum.pdb" Component_="Microsoft.SqlServer.WmiEnum.dll" FileName="MICRO~30.PDB|Microsoft.SqlServer.WmiEnum.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.WmiEnum.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.SqlServer.WmiEnum.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="MICRO~34.XML|Microsoft.SqlServer.WmiEnum.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Microsoft.SqlServer.WmiEnum.xml" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_6" Component_="Microsoft.Data.SqlClient.resources.dll_6" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\pt-BR\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="QuanLyQuanCafe.pdb" Component_="QuanLyQuanCafe.pdb" FileName="QUANLY~1.PDB|QuanLyQuanCafe.pdb" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\QuanLyQuanCafe.pdb" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v20.1.resources.dll_3" Component_="DevExpress.Data.v20.1.resources.dll_3" FileName="DEVEXP~1.DLL|DevExpress.Data.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Data.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.resources.dll_3" Component_="DevExpress.DataAccess.v20.1.resources.dll_3" FileName="DEVEXP~2.DLL|DevExpress.DataAccess.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.DataAccess.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.DataAccess.v20.1.UI.resources.dll_3" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll_3" FileName="DEVEXP~3.DLL|DevExpress.DataAccess.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.DataAccess.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Diagram.v20.1.Core.resources.dll_3" Component_="DevExpress.Diagram.v20.1.Core.resources.dll_3" FileName="DEVEXP~4.DLL|DevExpress.Diagram.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Diagram.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Dialogs.v20.1.Core.resources.dll_3" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll_3" FileName="DEVEXP~5.DLL|DevExpress.Dialogs.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Dialogs.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.ExpressApp.v20.1.resources.dll_3" Component_="DevExpress.ExpressApp.v20.1.resources.dll_3" FileName="DEVEXP~6.DLL|DevExpress.ExpressApp.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.ExpressApp.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v20.1.Core.resources.dll_3" Component_="DevExpress.Office.v20.1.Core.resources.dll_3" FileName="DEVEXP~7.DLL|DevExpress.Office.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Office.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Pdf.v20.1.Core.resources.dll_3" Component_="DevExpress.Pdf.v20.1.Core.resources.dll_3" FileName="DEVEXP~8.DLL|DevExpress.Pdf.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Pdf.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Persistent.Base.v20.1.resources.dll_3" Component_="DevExpress.Persistent.Base.v20.1.resources.dll_3" FileName="DEVEXP~9.DLL|DevExpress.Persistent.Base.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Persistent.Base.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.PivotGrid.v20.1.Core.resources.dll_3" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll_3" FileName="DEVEX~10.DLL|DevExpress.PivotGrid.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.PivotGrid.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v20.1.Core.resources.dll_3" Component_="DevExpress.Printing.v20.1.Core.resources.dll_3" FileName="DEVEX~11.DLL|DevExpress.Printing.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Printing.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v20.1.Core.resources.dll_3" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll_3" FileName="DEVEX~12.DLL|DevExpress.RichEdit.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.RichEdit.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v20.1.Core.resources.dll_3" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll_3" FileName="DEVEX~13.DLL|DevExpress.Sparkline.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Sparkline.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.resources.dll_3" Component_="DevExpress.Utils.v20.1.resources.dll_3" FileName="DEVEX~14.DLL|DevExpress.Utils.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Utils.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.UI.resources.dll_3" Component_="DevExpress.Utils.v20.1.UI.resources.dll_3" FileName="DEVEX~15.DLL|DevExpress.Utils.v20.1.UI.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Utils.v20.1.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpo.v20.1.resources.dll_3" Component_="DevExpress.Xpo.v20.1.resources.dll_3" FileName="DEVEX~16.DLL|DevExpress.Xpo.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.Xpo.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v20.1.resources.dll_3" Component_="DevExpress.XtraBars.v20.1.resources.dll_3" FileName="DEVEX~17.DLL|DevExpress.XtraBars.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraBars.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.resources.dll_3" Component_="DevExpress.XtraCharts.v20.1.resources.dll_3" FileName="DEVEX~18.DLL|DevExpress.XtraCharts.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraCharts.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_3" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_3" FileName="DEVEX~19.DLL|DevExpress.XtraCharts.v20.1.Wizard.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraCharts.v20.1.Wizard.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v20.1.resources.dll_3" Component_="DevExpress.XtraEditors.v20.1.resources.dll_3" FileName="DEVEX~20.DLL|DevExpress.XtraEditors.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraEditors.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGauges.v20.1.Core.resources.dll_3" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll_3" FileName="DEVEX~21.DLL|DevExpress.XtraGauges.v20.1.Core.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraGauges.v20.1.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v20.1.resources.dll_3" Component_="DevExpress.XtraGrid.v20.1.resources.dll_3" FileName="DEVEX~22.DLL|DevExpress.XtraGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v20.1.resources.dll_3" Component_="DevExpress.XtraLayout.v20.1.resources.dll_3" FileName="DEVEX~23.DLL|DevExpress.XtraLayout.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraLayout.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraNavBar.v20.1.resources.dll_3" Component_="DevExpress.XtraNavBar.v20.1.resources.dll_3" FileName="DEVEX~24.DLL|DevExpress.XtraNavBar.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraNavBar.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPivotGrid.v20.1.resources.dll_3" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll_3" FileName="DEVEX~25.DLL|DevExpress.XtraPivotGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraPivotGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v20.1.resources.dll_3" Component_="DevExpress.XtraPrinting.v20.1.resources.dll_3" FileName="DEVEX~26.DLL|DevExpress.XtraPrinting.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraPrinting.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.Extensions.resources.dll_3" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll_3" FileName="DEVEX~27.DLL|DevExpress.XtraReports.v20.1.Extensions.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraReports.v20.1.Extensions.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v20.1.resources.dll_3" Component_="DevExpress.XtraReports.v20.1.resources.dll_3" FileName="DEVEX~28.DLL|DevExpress.XtraReports.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraReports.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraRichEdit.v20.1.resources.dll_3" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll_3" FileName="DEVEX~29.DLL|DevExpress.XtraRichEdit.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraRichEdit.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraTreeList.v20.1.resources.dll_3" Component_="DevExpress.XtraTreeList.v20.1.resources.dll_3" FileName="DEVEX~30.DLL|DevExpress.XtraTreeList.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraTreeList.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraVerticalGrid.v20.1.resources.dll_3" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll_3" FileName="DEVEX~31.DLL|DevExpress.XtraVerticalGrid.v20.1.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\DevExpress.XtraVerticalGrid.v20.1.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_7" Component_="Microsoft.Data.SqlClient.resources.dll_7" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\ru\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="System.IdentityModel.Tokens.Jwt.dll" Component_="System.IdentityModel.Tokens.Jwt.dll" FileName="SYSTEM~1.DLL|System.IdentityModel.Tokens.Jwt.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\System.IdentityModel.Tokens.Jwt.dll" SelfReg="false"/>
+    <ROW File="System.IdentityModel.Tokens.Jwt.xml" Component_="DevExpress.Data.Desktop.v20.1.xml" FileName="SYSTEM~1.XML|System.IdentityModel.Tokens.Jwt.xml" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\System.IdentityModel.Tokens.Jwt.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_8" Component_="Microsoft.Data.SqlClient.resources.dll_8" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\zh-Hans\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Data.SqlClient.resources.dll_9" Component_="Microsoft.Data.SqlClient.resources.dll_9" FileName="MICROS~1.DLL|Microsoft.Data.SqlClient.resources.dll" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\lib\zh-Hant\Microsoft.Data.SqlClient.resources.dll" SelfReg="false"/>
+    <ROW File="QuanLyQuanCafe.exe" Component_="QuanLyQuanCafe.exe" FileName="QUANLY~1.EXE|QuanLyQuanCafe.exe" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="QuanLyQuanCafe.exe.config" Component_="QuanLyQuanCafe.exe.config" FileName="QUANLY~1.CON|QuanLyQuanCafe.exe.config" Attributes="0" SourcePath="..\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe.config" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_DetectSoftware" Sequence="151"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#QuanLyQuanCafe.exe]"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Type="1" Source="aicustact.dll" Target="MixedAllUsersInstallLocation"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[AI_UserProgramFiles][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="MAIN_BACKUP.bak"/>
+    <ROW Feature_="MainFeature" Component_="batchparser.dll"/>
+    <ROW Feature_="MainFeature" Component_="CreateDatabaseforolder.bat"/>
+    <ROW Feature_="MainFeature" Component_="SQLCMD.EXE"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Diagram.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.ExpressApp.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Persistent.Base.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.UI.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraNavBar.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Charts.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.CodeParser.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.Desktop.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.Desktop.v20.1.xml"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.UI.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Diagram.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Dialogs.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.ExpressApp.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Images.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v20.1.Drawing.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Persistent.Base.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.PivotGrid.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v20.1.Export.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.UI.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.Wizard.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraDiagram.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraDialogs.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGauges.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraNavBar.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPivotGrid.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraRichEdit.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraVerticalGrid.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Diagram.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.ExpressApp.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Persistent.Base.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.UI.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraNavBar.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Diagram.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.ExpressApp.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Persistent.Base.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.UI.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraNavBar.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_5"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.SNI.x64.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.SNI.x86.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.Tools.Sql.BatchParser.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Identity.Client.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.IdentityModel.JsonWebTokens.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.IdentityModel.Logging.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.IdentityModel.Protocols.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.IdentityModel.Tokens.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Assessment.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Assessment.Types.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.ConnectionInfo.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Dmf.Common.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Dmf.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.Assessment.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.Collector.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.CollectorEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.HadrData.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.HadrModel.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.RegisteredServers.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.Sdk.Sfc.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.SmoMetadataProvider.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.SqlParser.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.SqlScriptPublish.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.XEvent.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.XEventDbScoped.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.XEventDbScopedEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Management.XEventEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.PolicyEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.RegSvrEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.ServiceBrokerEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Smo.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.Smo.Notebook.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.SmoExtended.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.SqlClrProvider.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.SqlEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.SqlWmiManagement.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.SqlServer.WmiEnum.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_6"/>
+    <ROW Feature_="MainFeature" Component_="QuanLyQuanCafe.pdb"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.DataAccess.v20.1.UI.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Diagram.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Dialogs.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.ExpressApp.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Pdf.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Persistent.Base.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.PivotGrid.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.UI.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpo.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v20.1.Wizard.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGauges.v20.1.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraNavBar.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPivotGrid.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.Extensions.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraRichEdit.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraTreeList.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraVerticalGrid.v20.1.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_7"/>
+    <ROW Feature_="MainFeature" Component_="System.IdentityModel.Tokens.Jwt.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_8"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Data.SqlClient.resources.dll_9"/>
+    <ROW Feature_="MainFeature" Component_="QuanLyQuanCafe.exe"/>
+    <ROW Feature_="MainFeature" Component_="QuanLyQuanCafe.exe.config"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Sequence="748"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_SETMIXINSTLOCATION" Sequence="748"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_SQLEXPRESS_VERSION &gt;= AI_REQUIRED_SQLEXPRESS_VERSION" Description="[ProductName] cannot be installed on systems without [AI_REQUIRED_SQLEXPRESS_DISPLAY] or higher." DescriptionLocId="AI.LaunchCondition.SQLExpress" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>
